@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../sp.css">
+    <title>specific-page</title>
+    <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header class="navi-contain">
+        <div class="navi">
+            <div class="left-navi">
+                <img src="../fonts/fonts/city.svg" class="navi-img">
+                <span>西藏省</span>
+            </div>
+            <div class="right-navi">
+                <a class="navi-button" href="../../../Welcome/Welcome.html">返回首页</a>
+                <!-- <a class="navi-button" href="../../gallery.html">热门词云</a>
+                <a class="navi-button" href="../../general.html">远景规划</a>
+                <a class="navi-button active" href="../..../../China/China.html">具体省份</a>
+
+                <a class="navi-button" href="../../contact.html">联系我们</a> -->
+            </div>
+        </div>
+    </header>
+
+    <aside class="left-father">
+        <div class="left-box">
+            <div class="left-title">
+                规划方向
+            </div>
+            <a href="../西藏/义务教育.html" class="left-button"><img src="../fonts/fonts/ecnomic.svg"
+                class="left-img"><span class="label">义务教育</span></a>
+            <a href="../西藏/人均收入.html" class="left-button left-button-point"><img src="../fonts/fonts/law.svg"
+                    class="left-img"><span class="label">人均收入</span></a>
+            <a href="../西藏/社会保障.html" class="left-button"><img src="../fonts/fonts/knowledge.svg"
+                    class="left-img"><span class="label">社会保障</span></a>
+            <a href="../西藏/基础设施.html" class="left-button"><img src="../fonts/fonts/public-service.svg"
+                    class="left-img"><span class="label">基础设施</span></a>
+            <a href="../西藏/就业政策.html" class="left-button"><img src="../fonts/fonts/rush.svg"
+                    class="left-img"><span class="label">就业政策</span></a>
+            <a href="../西藏/特色产业.html" class="left-button"><img src="../fonts/fonts/ecnomic.svg"
+                    class="left-img"><span class="label">特色产业</span></a>
+        </div>
+    </aside>
+    <main class="right-box">
+        <div class="right-top-box">
+            <h4 style="color:#012970">人均收入</h4>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#" class="bread-a">主页</a></li>
+                    <li class="breadcrumb-item"><a href="../../China/China.html" class="bread-a">具体省份</a></li>
+                    <li class="breadcrumb-item"><a href="#" class="bread-a">西藏省</a></li>
+                    <li class="breadcrumb-item active" aria-current="page" style="color:#51678f">人均收入</li>
+                </ol>
+            </nav>
+            <div class="card-2">
+                <h4 class="top-card-title">
+                    人均收入
+                    <span class="top-card-span">|西藏</span>
+                </h4>
+                <p class="top-card-p">
+                    2020年，西藏自治区城乡居民人均可支配收入分别为25850元和7958元，增速分别为1.25%和5.8%。
+
+为了进一步提高西藏地区居民的收入水平，自治区政府提出了“新时期西藏人民共同富裕的目标”，即通过实现社会经济的高速发展、促进经济结构优化调整、加快农牧业现代化、深化对外经济合作、提高劳动者自我素质等措施，实现社会经济的可持续发展。<a
+                    href="http://tjj.xizang.gov.cn/xxgk/tjxx/tjgb/202104/t20210408_198946.html">查看更多</a>
+                </p>
+            </div>
+        </div>
+        <div class="right-bottom-box">
+            <div class="bottom-left-box">
+                <div class="card-1" id="bar">
+
+                </div>
+            </div>
+
+            <div class="bottom-right-box">
+                <div class="card-1" id="bar2">
+
+                </div>
+            </div>
+        </div>
+    </main>
+    </div>
+
+    <script src="../echarts.min.js"></script>
+
+    <script src="../button.js">
+    </script>
+
+    <script src="./js/echarts.min.js"></script>
+    <script>
+        var chartDom = document.getElementById('bar');
+        var myChart = echarts.init(chartDom);
+        var option;
+        //option...
+        option = {
+            title: {
+                text: '贫困背景统计'
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'
+                }
+            },
+            legend: {},
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis: {
+                type: 'value',
+                boundaryGap: [0, 0.01]
+            },
+            yAxis: {
+                type: 'category',
+                data: ['贫困人口数量(万) ', ' 贫困县(个)  ']
+            },
+            series: [
+                {
+                    name: '2015',
+                    type: 'bar',
+                    data: [18.3 , 74],
+                    itemStyle: {
+                        color: "#e6e600",
+                    },
+                },
+                {
+                    name: '2020',
+                    type: 'bar',
+                    data: [1.06, 18],
+                    itemStyle: {
+                        color: "#00bfff",
+                    },
+                }
+            ]
+        };
+ 
+        option && myChart.setOption(option);
+
+        var chartDom2 = document.getElementById('bar2');
+        var myChart2 = echarts.init(chartDom2);
+        var option2;
+        //option2...
+        option2 = {
+            title: {
+                text: '人均收入统计'
+            },
+            legend: {},
+            tooltip: {},
+            dataset: {
+                source: [
+                    ['product', '2015', '2020'],
+                    ['城镇人均可支配收入(万)', 2.54,4.11],
+                    ['农村人均可支配收入(万)', 0.824,1.45],
+                    ['城乡居民收入差距(倍)',3.09, 2.83],
+                ]
+            },
+            xAxis: { type: 'category' },
+            yAxis: {},
+            // Declare several bar series, each will be mapped
+            // to a column of dataset.source by default.
+            series: [
+                {
+                    type: 'bar',
+                    itemStyle: {
+                        color: "#a5d58e",
+                    },
+                },
+                {
+                    type: 'bar',
+                    itemStyle: {
+                        color: "#5572c9",
+                    },
+                }
+            ]
+        };
+
+        option2 && myChart2.setOption(option2);
+    </script>
+
+
+</body>
+
+</html>

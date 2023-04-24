@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>扶贫相关政策</title>
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<style type="text/css">
+*{
+	margin: 0;
+	padding: 0;}
+</style>
+
+</head>
+<body>
+
+	<div class="wrap">
+		<div class="wid_1820">
+
+			<div class="header">
+				<p class="tmtext"></p>
+				<p>
+					<span class="hefont">脱贫攻坚结构、扶贫相关政策</span>
+				</p>
+				
+			</div>
+					
+			<div class="baner">
+				<h2><a class="jybt">结构图</a></h2>
+				<h2><a class="wbgl">脱贫政策</a></h2>
+				<h2><a class="kbbt">攻坚总览</a></h2>
+				<h2><a href="../DataBrowsing/China/China.html">总览</a></h2>
+				<h2><a href="../Forecast/DataForecast.html">预测</a></h2>
+				<h2><a href="../Welcome/Welcome.html">首页</a></h2>
+			</div>
+
+			<div class="content content1"> 
+				<p class="ctitle"></p>
+				<div class="cznl">
+
+					<!-- 关键代码 -->
+
+					
+					<div id="pie1" class="echart_div pie1"></div>
+					<div id="pie2" class="echart_div pie2"></div>
+					<div class="piebt piebt1">贫困人口数(2015年底)</div>
+					<div class="piebt piebt2">贫困人口数(2020年)</div>
+
+
+					
+					<!-- 结构图模块 -->
+					<div id="guanxi" class="echart_div guanxi"></div>
+					<div class="gxlist tb"><h3>政策法规</h3>
+						<div class="sanlianbt"><a href="WordCloud.html">网络舆情云图</a></div>
+						<ul>
+							<a href="https://www.nrra.gov.cn/col/col2359/index.html">
+								<li>文化和旅游部将持续推动非遗工坊建设助力乡村振兴</li>
+							</a>
+							<a href="https://www.99co2.com/#/news_xiang?id=971">
+								<li>农村人居环境提升要充分发挥农民的主体作用</li>
+							</a>
+							<a href="https://www.nrra.gov.cn/art/2021/12/6/art_2359_192893.html">
+								<li>从“摆脱脏乱差”到“追求乡村美” 农村人居环境...</li>
+							</a>
+							<a href="https://www.nrra.gov.cn/art/2021/4/19/art_2360_189669.html">
+								<li>国家乡村振兴局关于做好2021年度中央财政...</li>
+							</a>
+							<a href="https://www.nrra.gov.cn/art/2021/4/30/art_2356_191411.html">
+								<li>国务院办公厅关于印发新时代中央国家机关...</li>
+							</a>
+							<a href="https://www.nrra.gov.cn/art/2021/3/22/art_2356_191400.html">
+								<li>中共中央 国务院关于实现巩固拓展脱贫攻坚...</li>
+							</a>
+							<a href="https://www.nrra.gov.cn/art/2021/5/12/art_2356_191399.html">
+								<li>中共中央办公厅印发《关于向重点乡村持续...</li>
+							</a>
+							<a href="https://www.nrra.gov.cn/art/2021/2/24/art_2356_191398.html">
+								<li>中共中央办公厅 国务院办公厅印发《关于加...</li>
+							</a>
+							<a href="https://www.nrra.gov.cn/art/2020/2/5/art_2356_126325.html">
+								<li>2020年中央一号文件公布 提出两大重点任务</li>
+							</a>
+							<a href="https://nrra.gov.cn/art/2019/1/15/art_1461_93105.html">
+								<li>国务院办公厅关于深入开展消费扶贫助力打赢...</li>
+							</a>
+							<a href="https://nrra.gov.cn/art/2016/12/4/art_343_261.html">
+								<li>国务院关于印发“十三五”脱贫攻坚规划的通知</li>
+							</a>							
+							<a href="https://nrra.gov.cn/art/2016/7/14/art_343_141.html">
+								<li>国家八七扶贫攻坚计划（1994-2000年）</li>
+							</a>
+						</ul>
+					</div>
+
+					<!-- 碳交易行情 -->
+					<div class="jydt">
+						<!-- 统计图 -->
+						<div class="lins1" id = "lins1"></div>						
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+<script src="libs/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="libs/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- 发散图ecahrt -->
+<script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/sanlian.js"></script>
+<script>
+
+	$(function(){
+		var titme1="";
+		
+		$(".baner a").click(function(){
+		
+			$(".baner a").removeClass("ahover");
+			$(".cznl>div").css("display","none");
+			$(".cznl").css("display","block");
+			var chartid = $(this).attr("class");
+
+			if(chartid === "jybt"){
+				$(".ctitle").html("脱贫攻坚结构图");
+				$("#guanxi,.gxlist").css("display","block");
+			}
+			else if(chartid === "wbgl"){
+				$(".jydt").css("display","block");
+				var lins1 = echarts.init(document.getElementById('lins1'));
+				lins1.setOption(option1);
+				$(".ctitle").html("部分省份贫困人口折线图");
+			}
+			
+			else if(chartid === "kbbt"){
+				$(".ctitle").html("贫困人口各省占比");
+				$("#pie1,.piebt").css("display","block");
+				$("#pie2,.piebt").css("display","block");
+				var myChart2 = echarts.init(document.getElementById('pie1'));
+				var myChart3 = echarts.init(document.getElementById('pie2'));
+      			myChart2.setOption(option2);
+      			myChart3.setOption(option22);
+			}
+			
+			$(this).addClass("ahover");
+			
+			
+		})
+		var address = window.location.href;
+		if(address.split("?")[1] == "1"){
+			$(".wbgl").click();
+			//window.location.href = "index.html";
+			   		var url = window.location.href;
+					url = url.split('?')[0];
+			        window.history.pushState({}, 0, url);
+		}
+		else{
+			$(".baner .jybt").click();
+		}
+		
+	})
+</script>

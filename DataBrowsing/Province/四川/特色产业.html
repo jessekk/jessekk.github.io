@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../sp.css">
+    <title>specific-page</title>
+    <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header class="navi-contain">
+        <div class="navi">
+            <div class="left-navi">
+                <img src="../fonts/fonts/city.svg" class="navi-img">
+                <span>四川省</span>
+            </div>
+            <div class="right-navi">
+                <!--<a class="navi-button" href="../../index_start.html">历史馆</a>
+                <a class="navi-button" href="../../gallery.html">热门词云</a>
+                <a class="navi-button" href="../../general.html">远景规划</a>
+                <a class="navi-button active" href="../../China.html">具体省份</a>
+
+                <a class="navi-button" href="../../contact.html">联系我们</a>-->
+            </div>
+        </div>
+    </header>
+
+    <aside class="left-father">
+        <div class="left-box">
+            <div class="left-title">
+                规划方向
+            </div>
+            <a href="../四川/义务教育.html" class="left-button"><img src="../fonts/fonts/ecnomic.svg"
+                class="left-img"><span class="label">义务教育</span></a>
+            <a href="../四川/人均收入.html" class="left-button"><img src="../fonts/fonts/law.svg"
+                    class="left-img"><span class="label">人均收入</span></a>
+            <a href="../四川/社会保障.html" class="left-button"><img src="../fonts/fonts/knowledge.svg"
+                    class="left-img"><span class="label">社会保障</span></a>
+            <a href="../四川/基础设施.html" class="left-button"><img src="../fonts/fonts/public-service.svg"
+                    class="left-img"><span class="label">基础设施</span></a>
+            <a href="../四川/就业政策.html" class="left-button"><img src="../fonts/fonts/rush.svg"
+                    class="left-img"><span class="label">就业政策</span></a>
+            <a href="../四川/特色产业.html" class="left-button left-button-point"><img src="../fonts/fonts/ecnomic.svg"
+                    class="left-img"><span class="label">特色产业</span></a>
+            </a>
+        </div>
+    </aside>
+    <main class="right-box">
+        <div class="right-top-box">
+            <h4 style="color:#012970">特色产业</h4>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#" class="bread-a">主页</a></li>
+                    <li class="breadcrumb-item"><a href="../../China/China.html" class="bread-a">具体省份</a></li>
+                    <li class="breadcrumb-item"><a href="#" class="bread-a">四川省</a></li>
+                    <li class="breadcrumb-item active" aria-current="page" style="color:#51678f">特色产业</li>
+                </ol>
+            </nav>
+            <div class="card-2">
+                <h4 class="top-card-title">
+                    特色产业
+                    <span class="top-card-span">|四川</span>
+                </h4>
+                <p class="top-card-p">
+                    “十四五”时期，是乘势而上开启全面建设社会主义现代化
+                    四川新征程、推动治蜀兴川再上新台阶的第一个五年，也是我省
+                    脱贫攻坚任务胜利完成后，巩固拓展脱贫攻坚成果，全面推进乡
+                    村振兴、加快农业农村现代化关键的五年。加快农业农村现代化，
+                    是形成新型工农城乡关系的客观要求、是社会主义现代化四川建
+                    设的重大任务、是做好新时代“三农”工作的核心目标。<a href="https://www.sc.gov.cn/10462/zfwjts/2021/7/26/4027648ea73543adadc03c0172d50948/files/84c2e53a8ff04288b0a7f26795123525.pdf">查看更多</a>
+                </p>
+            </div>
+        </div>
+        <div class="right-bottom-box">
+            <div class="bottom-left-box">
+                <div class="card-1" id="bar">
+
+                </div>
+            </div>
+
+            <div class="bottom-right-box">
+                <div class="card-1" id="bar2">
+
+                </div>
+            </div>
+        </div>
+    </main>
+    </div>
+
+    <script src="../echarts.min.js"></script>
+
+    <script src="../button.js">
+    </script>
+
+    <script src="./js/echarts.min.js"></script>
+    <script>
+        var chartDom = document.getElementById('bar');
+        var myChart = echarts.init(chartDom);
+        var option;
+        //option...
+        option = {
+            title: {
+                text: '产业结构'
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'
+                }
+            },
+            legend: {},
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis: {
+                type: 'value',
+                boundaryGap: [0, 0.01]
+            },
+            yAxis: {
+                type: 'category',
+                data: ['保费收入(亿元) ', ' 境内外上市公司(家)  ']
+            },
+            series: [
+                {
+                    name: '2020',
+                    type: 'bar',
+                    data: [2273 , 165],
+                    itemStyle: {
+                        color: "#e6e600",
+                    },
+                },
+                {
+                    name: '2022',
+                    type: 'bar',
+                    data: [3000, 220],
+                    itemStyle: {
+                        color: "#00bfff",
+                    },
+                }
+            ]
+        };
+ 
+        option && myChart.setOption(option);
+
+        var chartDom2 = document.getElementById('bar2');
+        var myChart2 = echarts.init(chartDom2);
+        var option2;
+        //option2...
+        option2 = {
+            title: {
+                text: '生产总值'
+            },
+            legend: {},
+            tooltip: {},
+            dataset: {
+                source: [
+                    ['product', '全年地区生产总值累计值（亿元）', '前三季度地区生产总值累计值（亿元）'],
+                    ['2016年',32680.5 ,20793.5],
+                    ['2017年',36980.22 ,27297.19],
+                    ['2018年', 42902.1, 30528.77],
+                    ['2019年', 46615.82, 33536.22],
+                    ['2020年', 48598.75, 34905.03],
+                    ['2021年', 48598.75, 38998.66]
+
+                ]
+            },
+            xAxis: { type: 'category' },
+            yAxis: {},
+            // Declare several bar series, each will be mapped
+            // to a column of dataset.source by default.
+            series: [
+                {
+                    type: 'bar',
+                    itemStyle: {
+                        color: "#a5d58e",
+                    },
+                },
+                {
+                    type: 'bar',
+                    itemStyle: {
+                        color: "#5572c9",
+                    },
+                }
+            ]
+        };
+
+        option2 && myChart2.setOption(option2);
+    </script>
+
+
+</body>
+
+</html>

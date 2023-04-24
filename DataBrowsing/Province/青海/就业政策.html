@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>specific-page</title>
+    <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../sp.css">
+</head>
+
+<body>
+    <header class="navi-contain">
+        <div class="navi">
+            <div class="left-navi">
+                <img src="../fonts/fonts/city.svg" class="navi-img">
+                <span>青海省</span>
+            </div>
+            <!--<div class="right-navi">
+                <a class="navi-button" href="../../index_start.html">历史馆</a>
+                <a class="navi-button" href="../../gallery.html">热门词云</a>
+                <a class="navi-button" href="../../general.html">远景规划</a>
+                <a class="navi-button active" href="../../China.html">具体省份</a>
+
+                <a class="navi-button" href="../../contact.html">联系我们</a>
+            </div>-->
+        </div>
+    </header>
+
+
+    <aside class="left-father">
+        <div class="left-box">
+            <div class="left-title">
+                规划方向
+            </div>
+            <a href="../青海/义务教育.html" class="left-button"><img src="../fonts/fonts/ecnomic.svg"
+                class="left-img"><span class="label">义务教育</span></a>
+            <a href="../青海/人均收入.html" class="left-button"><img src="../fonts/fonts/law.svg"
+                    class="left-img"><span class="label">人均收入</span></a>
+            <a href="../青海/社会保障.html" class="left-button"><img src="../fonts/fonts/knowledge.svg"
+                    class="left-img"><span class="label">社会保障</span></a>
+            <a href="../青海/基础设施.html" class="left-button"><img src="../fonts/fonts/public-service.svg"
+                    class="left-img"><span class="label">基础设施</span></a>
+            <a href="../青海/就业政策.html" class="left-button left-button-point"><img src="../fonts/fonts/rush.svg"
+                    class="left-img"><span class="label">就业政策</span></a>
+            <a href="../青海/特色产业.html" class="left-button"><img src="../fonts/fonts/ecnomic.svg"
+                    class="left-img"><span class="label">特色产业</span></a>
+            </a>
+        </div>
+    </aside>
+    <main class="right-box">
+        <div class="right-top-box">
+            <h4 style="color:#012970">就业政策</h4>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#" class="bread-a">主页</a></li>
+                    <li class="breadcrumb-item"><a href="../../China/China.html" class="bread-a">具体省份</a></li>
+                    <li class="breadcrumb-item"><a href="#" class="bread-a">青海省</a></li>
+                    <li class="breadcrumb-item active" aria-current="page" style="color:#51678f">就业政策</li>
+                </ol>
+            </nav>
+            <div class="card-2">
+                <h4 class="top-card-title">
+                    就业政策
+                    <span class="top-card-span">|青海</span>
+                </h4>
+                <p class="top-card-p">
+                    为深入贯彻落实中央和省委经济工作会议精神，扎实做好2022年稳定和扩大就业工作，强化就业优
+                    先政策，推动实现更加充分更高质量就业，确保全省经济社会持续健康发展，结合我省实际，制定如下政策措施。
+                    <a href="https://www.sc.gov.cn/10462/zfwjts/2021/8/3/d03847a09d714f38adb58f786ebedcb6/files/b98eb51fe91d4baab8dd13ca4f14e2c2.pdf">查看更多</a>
+                </p>
+            </div>
+        </div>
+        <div class="right-bottom-box">
+            <div class="card-1" id="bar">
+
+            </div>
+
+
+
+            <div class="card-1" id="bar2">
+
+            </div>
+
+        </div>
+    </main>
+    </div>
+
+
+    <script src="../echarts.min.js"></script>
+
+    <script src="../button.js">
+    </script>
+
+    <script src="./js/echarts.min.js"></script>
+    <script>
+        var chartDom = document.getElementById('bar');
+        var myChart = echarts.init(chartDom);
+        var option;
+        //option...
+        option = {
+            title: {
+                text: '就业率'
+            },
+            legend: {},
+            tooltip: {},
+            dataset: {
+                source: [
+                    ['product', '2020年'],
+                    ['毕业研究生的就业率%', 88.55],
+                    ['本科毕业生的就业率% ', 83.66],
+                    ['专科毕业生的就业率% ', 87.57],
+                    ]
+            },
+            xAxis: { type: 'category' },
+            yAxis: {},
+            // Declare several bar series, each will be mapped
+            // to a column of dataset.source by default.
+            series: [
+                {
+                    type: 'bar',
+                    itemStyle: {
+                        color: "#a5d58e",
+                    },
+                },
+                {
+                    type: 'bar',
+                    itemStyle: {
+                        color: "#AFE9B6",
+                    },
+                },
+                {
+                    type: 'bar',
+                    itemStyle: {
+                        color: "#5572c9",
+                    },
+                }
+            ]
+        };
+
+        option && myChart.setOption(option);
+
+        var chartDom2 = document.getElementById('bar2');
+        var myChart2 = echarts.init(chartDom2);
+        var option2;
+        //option2...
+        option2 = {
+            title: {
+                text: '专业相关度'
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'
+                }
+            },
+            legend: {},
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis: {
+                type: 'value',
+                boundaryGap: [0, 0.01]
+            },
+            yAxis: {
+                type: 'category',
+                data: ['毕业研究生%', ' 本科毕业生%', '专科毕业生% ']
+            },
+            series: [
+                {
+                    name: '2020',
+                    type: 'bar',
+                    data: [83.65, 83.65, 83.65],
+                    itemStyle: {
+                        color: "#e6e606",
+                    },
+                }
+            ]
+        };
+
+        option2 && myChart2.setOption(option2);
+    </script>
+
+
+</body>
+
+</html>

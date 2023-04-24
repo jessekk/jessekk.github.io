@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>specific-page</title>
+    <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../sp.css">
+</head>
+
+<body>
+    <header class="navi-contain">
+        <div class="navi">
+            <div class="left-navi">
+                <img src="../fonts/fonts/city.svg" class="navi-img">
+                <span>湖南省</span>
+            </div>
+        </div>
+    </header>
+
+
+    <aside class="left-father">
+        <div class="left-box">
+            <div class="left-title">
+                脱贫攻坚
+            </div>
+            <a href="../湖南/义务教育.html" class="left-button"><img src="../fonts/fonts/ecnomic.svg"
+                class="left-img"><span class="label">义务教育</span></a>
+            <a href="../湖南/人均收入.html" class="left-button"><img src="../fonts/fonts/law.svg"
+                    class="left-img"><span class="label">人均收入</span></a>
+            <a href="../湖南/社会保障.html" class="left-button"><img src="../fonts/fonts/knowledge.svg"
+                    class="left-img"><span class="label">社会保障</span></a>
+            <a href="../湖南/基础设施.html" class="left-button left-button-point"><img src="../fonts/fonts/public-service.svg"
+                    class="left-img"><span class="label">基础设施</span></a>
+            <a href="../湖南/就业政策.html" class="left-button"><img src="../fonts/fonts/rush.svg"
+                    class="left-img"><span class="label">就业政策</span></a>
+            <a href="../湖南/特色产业.html" class="left-button"><img src="../fonts/fonts/ecnomic.svg"
+                    class="left-img"><span class="label">特色产业</span></a>
+        </div>
+    </aside>
+    <main class="right-box">
+        <div class="right-top-box">
+            <h4 style="color:#012970">基础设施</h4>
+            <nav aria-label="breadcrumb">
+            </nav>
+            <div class="card-2">
+                <h4 class="top-card-title">
+                    基础设施
+                    <span class="top-card-span">|湖南</span>
+                </h4>
+                <p class="top-card-p">
+                    基础设施的保证是脱贫攻坚的重要保证和指标。为农村人民创建良好的生活环境是乡村振兴的必经之路。基础设施包括交通基础设施、
+                    供水供电保障，商业服务、科研与技术服务、园林绿化、环境保护、文化教育、卫生事业等市政公用工程设施和公众生活服务设施等。
+                    是国民经济、乡村振兴发展的基础。
+                <br></p>
+                <p class="top-card-p">
+                    经济起飞离不开基础设施建设的助推。沿海地区经济快速发展和某些区域开发的成功，一条共同的经验就是通过率先启动大规模的基础
+                    设施建设，为经济高速增长奠定坚实的基础。经过这些年的超常规发展，中国的基础设施面貌有了翻天覆地的变化，促进了全国经济社
+                    会的快速持续增长。相较于发达地区的基础设施，贫困省份农村地区的设施尚待解决。
+                <br></p>
+                <p class="top-card-p">
+                    以下是本省展示2015年与2020年关于教育，交通，供电、医疗方面的进步。
+                </p>
+            </div>
+        </div>
+        <div class="right-bottom-box">
+            <div class="card-1" id="bar">
+            </div>
+            <div class="card-1" id="bar2">
+            </div>
+        </div>
+    </main>
+    </div>
+
+    <script src="echarts.min.js"></script>
+
+    <script src="../button.js"></script>
+
+    <script src="../echarts.min.js"></script>
+    <script>
+        var chartDom = document.getElementById('bar');
+        var myChart = echarts.init(chartDom);
+        var option;
+        //option...
+        option = {
+            title: {
+                text: '基础教育普及率'
+            },
+            legend: {},
+            tooltip: {},
+            dataset: {
+                source: [
+                    ['product', '2020', '2025'],
+                    ['学前教育毛入园率(%)', 73.2, 85.54],
+                    ['九年义务教育巩固率(%)', 98.0, 98],
+                    ['高中阶段教育毛入学率(%)', 90, 93.29],
+                ]
+            },
+            xAxis: { type: 'category' },
+            yAxis: {},
+            // Declare several bar series, each will be mapped
+            // to a column of dataset.source by default.
+            series: [
+                {
+                    type: 'bar',
+                    itemStyle: {
+                        color: "#ec6464",
+                    },
+                },
+                {
+                    type: 'bar',
+                    itemStyle: {
+                        color: "#5474c4",
+                    },
+                }
+            ]
+        };
+        option && myChart.setOption(option);
+        option && myChart.setOption(option);
+
+        var chartDom2 = document.getElementById('bar2');
+        var myChart2 = echarts.init(chartDom2);
+        var option2;
+        //option2...
+        option2 = {
+            title: {
+                text: '乡村振兴基础设施建设'
+            },
+            legend: {},
+            tooltip: {},
+            dataset: {
+                source: [
+                    ['product', '2015', '2020'],
+                    ['乡村道路硬化工程(%)', 84.32, 100],
+                    ['通电覆盖率(%)', 99, 100],
+                    ['乡镇通邮率(%)', 85.61, 100],
+                ]
+            },
+            xAxis: { type: 'category' },
+            yAxis: {},
+            // Declare several bar series, each will be mapped
+            // to a column of dataset.source by default.
+            series: [
+                {
+                    type: 'bar',
+                    itemStyle: {
+                        color: "#ec6464",
+                    },
+                },
+                {
+                    type: 'bar',
+                    itemStyle: {
+                        color: "#5474c4",
+                    },
+                }
+            ]
+        };
+        option2 && myChart2.setOption(option2);
+    </script>
+
+
+</body>
+
+</html>

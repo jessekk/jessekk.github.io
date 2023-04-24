@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>specific-page</title>
+    <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../sp.css">
+</head>
+
+<body>
+    <header class="navi-contain">
+        <div class="navi">
+            <div class="left-navi">
+                <img src="../fonts/fonts/city.svg" class="navi-img">
+                <span>西藏省</span>
+            </div>
+            <div class="right-navi">
+                <a class="navi-button" href="../../../Welcome/Welcome.html">返回首页</a>
+                <!-- <a class="navi-button" href="../../gallery.html">热门词云</a>
+                <a class="navi-button" href="../../general.html">远景规划</a>
+                <a class="navi-button active" href="../../China.html">具体省份</a>
+
+                <a class="navi-button" href="../../contact.html">联系我们</a> -->
+            </div>
+        </div>
+    </header>
+
+
+    <aside class="left-father">
+        <div class="left-box">
+            <div class="left-title">
+                规划方向
+            </div>
+            <a href="../西藏/义务教育.html" class="left-button left-button-point"><img src="../fonts/fonts/ecnomic.svg"
+                class="left-img"><span class="label">义务教育</span></a>
+            <a href="../西藏/人均收入.html" class="left-button"><img src="../fonts/fonts/law.svg"
+                    class="left-img"><span class="label">人均收入</span></a>
+            <a href="../西藏/社会保障.html" class="left-button"><img src="../fonts/fonts/knowledge.svg"
+                    class="left-img"><span class="label">社会保障</span></a>
+            <a href="../西藏/基础设施.html" class="left-button"><img src="../fonts/fonts/public-service.svg"
+                    class="left-img"><span class="label">基础设施</span></a>
+            <a href="../西藏/就业政策.html" class="left-button"><img src="../fonts/fonts/rush.svg"
+                    class="left-img"><span class="label">就业政策</span></a>
+            <a href="../西藏/特色产业.html" class="left-button"><img src="../fonts/fonts/ecnomic.svg"
+                    class="left-img"><span class="label">特色产业</span></a>
+            </a>
+        </div>
+    </aside>
+    <main class="right-box">
+        <div class="right-top-box">
+            <h4 style="color:#012970">义务教育</h4>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#" class="bread-a">主页</a></li>
+                    <li class="breadcrumb-item"><a href="../../China/China.html" class="bread-a">具体省份</a></li>
+                    <li class="breadcrumb-item"><a href="#" class="bread-a">西藏省</a></li>
+                    <li class="breadcrumb-item active" aria-current="page" style="color:#51678f">义务教育</li>
+                </ol>
+            </nav>
+            <div class="card-2">
+                <h4 class="top-card-title">
+                    义务教育
+                    <span class="top-card-span">|西藏</span>
+                </h4>
+                <p class="top-card-p">
+                    坚持以习近平新时代中国特色社会主义思想为指导，深入贯彻落实党的二十大精神和省委十二届二次全会部署，全面贯彻党的教育方针，推动实施乡村振兴战略，促进义务教育优质均衡发展。注重因地制宜，充分考虑地理位置、经济社会发展，科学划分学区，合理布局义务教育学校。注重统筹协调，以学区为单元，深化“县管校聘”改革，优化配置教育资源，充分发挥学区中心校的辐射带动作用，打破校际壁垒，实现教育资源集约节约，教育质量提升。到2025年，学区教育资源统筹力度进一步加大，学区制治理基本实现全覆盖，教育共建共治共享的制度机制基本健全，城乡、校际办学质量差距不断缩小，区域教育教学质量和优质均衡发展水平显著提升。
+<a href="http://edu.sc.gov.cn/scedu/jyt2023/2023/3/28/45846134474c487a959807692a08458b.shtml">查看更多</a>
+                </p>
+            </div>
+        </div>
+        <div class="right-bottom-box">
+            <div class="card-1" id="bar">
+
+            </div>
+
+
+
+            <div class="card-1" id="bar2">
+
+            </div>
+
+        </div>
+    </main>
+    </div>
+
+    <script src="echarts.min.js"></script>
+
+    <script src="../button.js"></script>
+
+    <script src="../echarts.min.js"></script>
+    <script>
+        var chartDom = document.getElementById('bar');
+        var myChart = echarts.init(chartDom);
+        var option;
+        //option...
+        option = {
+            title: {
+                text: '义务教育领域主要发展指标'
+            },
+            legend: {},
+            tooltip: {},
+            dataset: {
+                source: [
+                    ['product', '2020', '2025'],
+                    ['学前教育毛入园率(%)', 90.93, 92.09],
+                    ['九年义务教育巩固率(%)', 95.86, 96],
+                    ['高中阶段教育毛入学率(%)', 93.1, 96],
+                ]
+            },
+            xAxis: { type: 'category' },
+            yAxis: {},
+            // Declare several bar series, each will be mapped
+            // to a column of dataset.source by default.
+            series: [
+                {
+                    type: 'bar',
+                    itemStyle: {
+                        color: "#ec6464",
+                    },
+                },
+                {
+                    type: 'bar',
+                    itemStyle: {
+                        color: "#5474c4",
+                    },
+                }
+            ]
+        };
+        option && myChart.setOption(option);
+        option && myChart.setOption(option);
+
+        var chartDom2 = document.getElementById('bar2');
+        var myChart2 = echarts.init(chartDom2);
+        var option2;
+        //option2...
+        option2 = {
+            tooltip: {
+                trigger: 'item'
+            },
+            legend: {
+                top: '5%',
+                left: 'center'
+            },
+            series: [
+                {
+                    name: '公共服务重点领域主要发展指标',
+                    type: 'pie',
+                    radius: ['40%', '70%'],
+                    avoidLabelOverlap: true,
+                    itemStyle: {
+                        borderRadius: 10,
+                        borderColor: '#fff',
+                        borderWidth: 2
+                    },
+                    label: {
+                        show: false,
+                        position: 'center'
+                    },
+                    labelLine: {
+                        show: false
+                    },
+                    data: [
+                        {
+                            value: 51 , name: '6岁至18岁人口数量(万)', itemStyle: {
+                                color: "#9bdb7b",
+                            }
+                        },
+                        {
+                            value: 44 , name: '在校生数量(万)', itemStyle: {
+                                color: "#5474c4",
+                            }
+                        },
+                        {
+                            value: 7, name: '未就读儿童人口(万)', itemStyle: {
+                                color: "#fbcb5d",
+                            }
+                        },
+                        {
+                            value: 92, name: '中职及以下学历人口(%)', itemStyle: {
+                                color: "#ec6464",
+                            }
+                        },
+                    ]
+                }
+            ]
+        };
+        option2 && myChart2.setOption(option2);
+    </script>
+
+
+</body>
+
+</html>

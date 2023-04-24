@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../sp.css">
+    <title>specific-page</title>
+    <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header class="navi-contain">
+        <div class="navi">
+            <div class="left-navi">
+                <img src="../fonts/fonts/city.svg" class="navi-img">
+                <span>新疆省</span>
+            </div>
+            <div class="right-navi">
+                <a class="navi-button" href="../../../Welcome/Welcome.html">返回首页</a>
+                <!-- <a class="navi-button" href="../../gallery.html">热门词云</a>
+                <a class="navi-button" href="../../general.html">远景规划</a>
+                <a class="navi-button active" href="../..../../China/China.html">具体省份</a>
+
+                <a class="navi-button" href="../../contact.html">联系我们</a> -->
+            </div>
+        </div>
+    </header>
+
+    <aside class="left-father">
+        <div class="left-box">
+            <div class="left-title">
+                规划方向
+            </div>
+            <a href="../新疆/义务教育.html" class="left-button"><img src="../fonts/fonts/ecnomic.svg"
+                class="left-img"><span class="label">义务教育</span></a>
+            <a href="../新疆/人均收入.html" class="left-button left-button-point"><img src="../fonts/fonts/law.svg"
+                    class="left-img"><span class="label">人均收入</span></a>
+            <a href="../新疆/社会保障.html" class="left-button"><img src="../fonts/fonts/knowledge.svg"
+                    class="left-img"><span class="label">社会保障</span></a>
+            <a href="../新疆/基础设施.html" class="left-button"><img src="../fonts/fonts/public-service.svg"
+                    class="left-img"><span class="label">基础设施</span></a>
+            <a href="../新疆/就业政策.html" class="left-button "><img src="../fonts/fonts/rush.svg"
+                    class="left-img"><span class="label">就业政策</span></a>
+            <a href="../新疆/特色产业.html" class="left-button"><img src="../fonts/fonts/ecnomic.svg"
+                    class="left-img"><span class="label">特色产业</span></a>
+            </a>
+        </div>
+    </aside>
+    <main class="right-box">
+        <div class="right-top-box">
+            <h4 style="color:#012970">人均收入</h4>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#" class="bread-a">主页</a></li>
+                    <li class="breadcrumb-item"><a href="../../China/China.html" class="bread-a">具体省份</a></li>
+                    <li class="breadcrumb-item"><a href="#" class="bread-a">新疆省</a></li>
+                    <li class="breadcrumb-item active" aria-current="page" style="color:#51678f">人均收入</li>
+                </ol>
+            </nav>
+            <div class="card-2">
+                <h4 class="top-card-title">
+                    人均收入
+                    <span class="top-card-span">|新疆</span>
+                </h4>
+                <p class="top-card-p">
+                    要切实保障和改善民生，推进民生保障体系建设，加快提升居民收入水平。具体措施包括：实施乡村振兴战略，推进产业扶贫和就业扶贫，打造“三区三州”产业升级带，提高农民收入；深化供给侧结构性改革，增强创新发展动力，提高劳动力市场适应性；保障基本公共服务，全面推进教育、医疗、保障等基础设施和公共服务供给便捷化，促进群众生活改善。<a
+                    href="http://fgw.xinjiang.gov.cn/art/2021/3/19/art_2_147864.html">查看更多</a>
+                </p>
+            </div>
+        </div>
+        <div class="right-bottom-box">
+            <div class="bottom-left-box">
+                <div class="card-1" id="bar">
+
+                </div>
+            </div>
+
+            <div class="bottom-right-box">
+                <div class="card-1" id="bar2">
+
+                </div>
+            </div>
+        </div>
+    </main>
+    </div>
+
+    <script src="../echarts.min.js"></script>
+
+    <script src="../button.js">
+    </script>
+
+    <script src="./js/echarts.min.js"></script>
+    <script>
+        var chartDom = document.getElementById('bar');
+        var myChart = echarts.init(chartDom);
+        var option;
+        //option...
+        option = {
+            title: {
+                text: '贫困背景统计'
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'
+                }
+            },
+            legend: {},
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis: {
+                type: 'value',
+                boundaryGap: [0, 0.01]
+            },
+            yAxis: {
+                type: 'category',
+                data: ['贫困人口数量(万) ', ' 贫困县(个)  ']
+            },
+            series: [
+                {
+                    name: '2015',
+                    type: 'bar',
+                    data: [24.8 , 35],
+                    itemStyle: {
+                        color: "#e6e600",
+                    },
+                },
+                {
+                    name: '2020',
+                    type: 'bar',
+                    data: [3.98, 15],
+                    itemStyle: {
+                        color: "#00bfff",
+                    },
+                }
+            ]
+        };
+ 
+        option && myChart.setOption(option);
+
+        var chartDom2 = document.getElementById('bar2');
+        var myChart2 = echarts.init(chartDom2);
+        var option2;
+        //option2...
+        option2 = {
+            title: {
+                text: '人均收入统计'
+            },
+            legend: {},
+            tooltip: {},
+            dataset: {
+                source: [
+                    ['product', '2015', '2020'],
+                    ['城镇人均可支配收入(万)', 2.62,3.48],
+                    ['农村人均可支配收入(万)', 0.94,1.40],
+                    ['城乡居民收入差距(倍)',2.78, 2.48],
+                ]
+            },
+            xAxis: { type: 'category' },
+            yAxis: {},
+            // Declare several bar series, each will be mapped
+            // to a column of dataset.source by default.
+            series: [
+                {
+                    type: 'bar',
+                    itemStyle: {
+                        color: "#a5d58e",
+                    },
+                },
+                {
+                    type: 'bar',
+                    itemStyle: {
+                        color: "#5572c9",
+                    },
+                }
+            ]
+        };
+
+        option2 && myChart2.setOption(option2);
+    </script>
+
+
+</body>
+
+</html>

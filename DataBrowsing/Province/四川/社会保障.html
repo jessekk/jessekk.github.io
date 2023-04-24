@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>specific-page</title>
+    <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../sp.css">
+</head>
+
+<body>
+    <header class="navi-contain">
+        <div class="navi">
+            <div class="left-navi">
+                <img src="../fonts/fonts/city.svg" class="navi-img">
+                <span>四川省</span>
+            </div>
+            <!-- <div class="right-navi">
+                <a class="navi-button" href="../../index_start.html" >历史馆</a>
+                <a class="navi-button" href="../../gallery.html">热门词云</a>
+                <a class="navi-button" href="../../general.html">远景规划</a>
+                <a class="navi-button active" href="../../China.html" >具体省份</a>
+
+                <a class="navi-button" href="../../contact.html">联系我们</a>
+            </div> -->
+        </div>
+    </header>
+
+
+    <aside class="left-father">
+        <div class="left-box">
+            <div class="left-title">
+                脱贫攻坚
+            </div>
+            <a href="../四川/义务教育.html" class="left-button"><img src="../fonts/fonts/ecnomic.svg"
+                class="left-img"><span class="label">义务教育</span></a>
+            <a href="../四川/人均收入.html" class="left-button"><img src="../fonts/fonts/law.svg"
+                    class="left-img"><span class="label">人均收入</span></a>
+            <a href="../四川/社会保障.html" class="left-button left-button-point"><img src="../fonts/fonts/knowledge.svg"
+                    class="left-img"><span class="label">社会保障</span></a>
+            <a href="../四川/基础设施.html" class="left-button"><img src="../fonts/fonts/public-service.svg"
+                    class="left-img"><span class="label">基础设施</span></a>
+            <a href="../四川/就业政策.html" class="left-button"><img src="../fonts/fonts/rush.svg"
+                    class="left-img"><span class="label">就业政策</span></a>
+            <a href="../四川/特色产业.html" class="left-button"><img src="../fonts/fonts/ecnomic.svg"
+                    class="left-img"><span class="label">特色产业</span></a>
+        </div>
+    </aside>
+    <main class="right-box">
+        <div class="right-top-box">
+            <h4 style="color:#012970">社会保障</h4>
+            <!-- <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#" class="bread-a">主页</a></li>
+                    <li class="breadcrumb-item"><a href="/China.html" class="bread-a">具体省份</a></li>
+                    <li class="breadcrumb-item"><a href="#" class="bread-a">四川省</a></li>
+                    <li class="breadcrumb-item active" aria-current="page" style="color:#51678f">知识产权</li>
+                </ol> -->
+            </nav>
+            <div class="card-2">
+                <h4 class="top-card-title">
+                    社会保障
+                    <span class="top-card-span">|四川</span>
+                </h4>
+                <p class="top-card-p">
+                    社会保障制度(social security system)是在政府的管理之下，以国家为主体，依据一定的法律和规定，通过国民收入的再分配，以社会保障基金为依托，对公民在暂时或者永久性失去劳动能力以及由于各种原因生活发生困难时给予物质帮助，用以保障居民的最基本的生活需要。<br>
+                </p>
+                <p class="top-card-p">
+                    社会保障制度是国家通过立法而制定的社会保险、救助、补贴等一系列制度的总称。现代国家最重要的社会经济制度之一。作用在于保障全社会成员基本生存与生活需要，特别是保障公民在年老、疾病、伤残、失业、生育、死亡、遭遇灾害、面临生活困难时的特殊需要。由国家通过国民收入分配和再分配实现。由社会福利、社会保险、社会救助、社会优抚和安置等各项不同性质、作用和形式的社会保障制度构成整个社会保障体系。现代国家必须制定社会保障法律规范，保证社会保障制度真正得到贯彻实施。
+                </p>
+                <p class="top-card-p">
+                    如何在乡村振兴阶段让这部分群体不掉队，共享发展成果，避免发展带来的差距拉大，是巩固拓展脱贫攻坚成果、缩小城乡差距实现共同富裕需要重点关注的方向。建立健全社会保障体系，为最脆弱群体、低收入群体摆脱贫困提供基础性兜底性的生计保障，是国际社会通行且有效的做法。
+                </p>
+            </div>
+        </div>
+        <div class="right-bottom-box">
+            <div class="card-1" id="bar">
+            </div>
+            <!-- <div class="card-1" id="bar2">
+            </div> -->
+
+        </div>
+    </main>
+    </div>
+
+
+    <script src="echarts.min.js"></script>
+
+    <script src="../button.js"> </script>
+
+    <script src="../echarts.min.js"></script>
+    <script>
+        var chartDom = document.getElementById('bar');
+        var myChart = echarts.init(chartDom);
+        var option;
+        //option...
+        option = {
+            title: {
+                text: '四川社会保障统计'
+            },
+            legend: {},
+            tooltip: {},
+            dataset: {
+                source: [
+                    ['product', '2015', '2020'],
+                    ['养老保险参保(万人)', 3020.4, 3224.2],
+                    ['医疗保险参保(万人)', 2655.7, 8591.7],
+                    ['失业/工伤保险(万人)', 1404.3, 2365.9],
+                ]
+            },
+            xAxis: { type: 'category' },
+            yAxis: {},
+            // Declare several bar series, each will be mapped
+            // to a column of dataset.source by default.
+            series: [
+                {
+                    type: 'bar',
+                    itemStyle: {
+                        color: "#a5d58e",
+                    },
+                },
+                {
+                    type: 'bar',
+                    itemStyle: {
+                        color: "#5572c9",
+                    },
+                }
+            ]
+        };
+        option && myChart.setOption(option);
+
+        // var chartDom2 = document.getElementById('bar2');
+        // var myChart2 = echarts.init(chartDom2);
+        // var option2;
+        // //option2...
+        // option2 = {
+        //     title: {
+        //         text: '知识产权发展主要目标',
+        //         left: 'left'
+        //     },
+        //     angleAxis: {
+        //         type: 'category',
+        //         data: ['知识产权质押融资登记金额(亿元)', '知识产权民事一审案件服判息诉率(%)', '知识产权公共服务网点市(州)覆盖率(%)', '知识产权纠纷人民调解委员会市(州)覆盖率(%)']
+        //     },
+        //     tooltip: {
+        //         trigger: 'item',
+        //         formatter: '{a} <br /> {b}:{c}'
+        //     },
+        //     radiusAxis: {},
+        //     polar: {},
+        //     series: [
+        //         {
+        //             type: 'bar',
+        //             data: [60, 88, 40, 30],
+        //             coordinateSystem: 'polar',
+        //             name: '2020',
+        //             stack: 'a',
+        //             itemStyle: {
+        //                 color: "#73c0de"
+        //             },
+        //             emphasis: {
+        //                 focus: 'series'
+        //             }
+        //         },
+        //         {
+        //             type: 'bar',
+        //             data: [60, 4, 40, 70],
+        //             coordinateSystem: 'polar',
+        //             name: '2025',
+        //             stack: 'a',
+        //             itemStyle: {
+        //                 color: "#fac858"
+        //             },
+        //             emphasis: {
+        //                 focus: 'series'
+        //             }
+        //         }
+        //     ],
+        //     legend: {
+        //         show: true,
+        //         data: ['2020', '2025']
+        //     }
+        // };
+        // option2 && myChart2.setOption(option2);
+    </script>
+
+
+</body>
+
+</html>

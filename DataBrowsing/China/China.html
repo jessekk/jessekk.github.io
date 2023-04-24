@@ -1,0 +1,112 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>数据总览</title>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/echarts.min.js"></script>
+<script type="text/javascript" src="js/china.js"></script>
+<script type="text/javascript" src="js/map.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="head clearfix">
+		<h1 class="pulll_left">脱贫攻坚战下贫困地区的成绩数据可视化设计</h1>
+		<div class="menu menu2 pulll_left">
+			<ul>      
+				<li><a href="../../Forecast/DataForecast.html">预测</a></li>
+				<li><a href="../../CarbonDioxide/CarbonDioxide.html">关系</a></li>
+				<li><a href="../../Welcome/Welcome.html">首页</a></li>
+			</ul>
+		</div>		
+	</div>
+
+	<div class="mainbox">
+		<ul class="clearfix nav1">
+			<li style="width: 22%">
+				<div class="box">
+					<div class="tit">重要年份&nbsp;</div>
+					<div class="boxnav" style="height: 330px;">
+						<div class="yqlist">
+				            <ul class="clearfix">
+				                <li>
+				                	<div class="yq" id="yq">2012</div>
+				                	<span>打响脱贫攻坚</span>
+				                </li>
+				                <li>
+				                	<div class="yq">2013&nbsp;</div>
+				                	<span>&nbsp;精准扶贫</span>
+				                </li>
+				                <li>
+				                	<div class="yq">2017&nbsp;</div>
+				                	<span>深度扶贫&nbsp;</span>
+				                </li>
+				                <li>
+				                	<div class="yq">2020&nbsp;</div>
+				                	<span>脱贫攻坚取得胜利&nbsp;</span>
+				                </li>
+				    		</ul>
+		    			</div>
+					</div>
+				</div>
+				<div class="box">
+					<div class="tit">贫困人口数量(2012-2020)&nbsp;</div>
+					<div><br>
+				    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;单位：万人</div>
+					<div class="boxnav" style="height: ;">
+						<div class="" style="height: 368px" id="echart2">
+						</div>
+					</div>
+				</div>
+			</li>
+
+			<li style="width: 56%">
+
+				<div class="box">
+					<div class="boxnav mapc" style="height: 550px; position: relative">
+						<div class="map" id="map"></div>
+					</div>
+				</div>
+
+
+				<div class="box">
+					<div class="tit">年均脱贫人口
+						<a href="javacript:;">&nbsp;&nbsp;&nbsp;	中国贫困人口连续7年每年减贫1000万人以上&nbsp;</a>
+<!--
+            			<a href="javacript:;">&nbsp;&nbsp;2010&nbsp;</a>
+            			<a href="javacript:;">&nbsp;&nbsp;2011&nbsp;</a>
+            			<a href="javacript:;">&nbsp;&nbsp;2012&nbsp;</a>
+            			<a href="javacript:;">&nbsp;&nbsp;2013&nbsp;</a>
+            			<a href="javacript:;">&nbsp;&nbsp;2014&nbsp;</a>
+            			<a href="javacript:;">&nbsp;&nbsp;2015&nbsp;</a>
+            			<a href="javacript:;">&nbsp;&nbsp;2016&nbsp;</a>
+            			<a href="javacript:;">&nbsp;&nbsp;2017&nbsp;</a>
+            			<a href="javacript:;">&nbsp;&nbsp;2018&nbsp;</a>
+            			<a href="javacript:;">&nbsp;&nbsp;2019&nbsp;</a>
+            			<a href="javacript:;">&nbsp;&nbsp;2020&nbsp;</a>
+            			 <a href="javacript:;">&nbsp2021&nbsp</a> 
+-->
+						<div class="boxnav" style="height: 250px;"  id="echart3">
+					</div>
+				</div>	
+			</li>
+
+			<li style="width: 22%">
+				<div class="box">
+					<div class="tit">剩余贫困县个数&nbsp;</div>
+					<div class="boxnav" id="echart4" style="height: 200px;"></div>
+				</div>
+				<div class="box">
+					<div class="tit">脱贫攻坚成果系数</div>
+					<div class="boxnav" style="height: 250px;" id="echart5" ></div>
+				</div>
+				<div class="box">
+					<div class="tit">贫困地区人均可支配收入来源&nbsp;</div>
+					<div class="boxnav" style="height: 250px;" id="echart6"></div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>
